@@ -1,13 +1,13 @@
-import Header from "../../SubComponents/Header";
 import LeagueList from "../../SubComponents/LeagueList";
+// import BackBtn from "../../SubComponents/BackBtn";
 
-const LiveScores = ({ subSection }) => {
+const LiveScores = ({ Section, subSection, backOne }) => {
 
 
     return (
 
         <div>
-            <Header />
+            {/* <BackBtn backOne={backOne} /> */}
             <LeagueList />
         </div>
       );

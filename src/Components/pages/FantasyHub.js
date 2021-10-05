@@ -1,15 +1,20 @@
 import NavPanel from "../SubComponents/NavPanel";
 import Header from "../SubComponents/Header";
+import PlayerCompare from "../pages/subPages/PlayerCompare";
+import TeamStats from "../pages/subPages/TeamStats";
 
 
-const FantasyHub = ({ Section, changeSection, changeSub }) => {
+
+const FantasyHub = ({ Section, subSection, changeSub, backOne }) => {
 
 
     return ( 
 
         <div>
             <Header />
-            <NavPanel changeSection={changeSection} changeSub={changeSub} Section={Section} />
+            {subSection === null ? <NavPanel subSection={subSection} changeSub={changeSub} Section={Section} /> : null}
+            {subSection === 'PlayerCompare' && <PlayerCompare backOne={backOne} />}
+            {subSection === 'TeamStats' && <TeamStats backOne={backOne} />}
         </div>
      );
 }

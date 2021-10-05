@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
 
 :root {
 
@@ -8,6 +8,25 @@
     box-sizing: border-box;
 
 }
+
+button .link {
+
+    text-decoration: none;
+    color: white;
+}
+
+li .link {
+
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+li .link.active {
+
+    color: #118cfe;
+}
+
 
 /* ----------------------------------------------SECTION HEADER */
 
@@ -20,9 +39,32 @@
 .sectionHeader {
 
     margin-top: 0px;
-    font-size: 5rem;
-    color: orangered;
+    font-size: 3rem;
+    text-align: center;
+    color: #118cfe;
     font-family: 'Electrolize', sans-serif;
+}
+/* --------------------------------------NAV BAR */
+
+.navBarStyles {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.navBarList {
+
+    display: flex;
+    list-style: none;
+
+}
+
+.navBarItem {
+
+    font-size: 1.6rem;
+    margin: 10px 10px 0px 10px;
+    cursor: pointer;
+    font-family: 'karla', sans-serif;
 }
 
 /* ----------------------------------------------NAV PANEL */
@@ -30,7 +72,7 @@
 .navGrid {
 
     
-    margin-top: 50px;
+    margin-top: -20px;
 }
 
 .navGroup {
@@ -50,7 +92,8 @@
 .navItems {
 
     text-align: center;
-    background-color: #118CFE;
+    /* background-color: #118CFE; */
+    background-color: rgb(226, 92, 43);
     align-content: center;
     padding: 70px 5px;
     font-size: 1.3rem;
@@ -83,7 +126,7 @@
 
     font-size: 1.3rem;
     font-family: 'Electrolize', sans-serif;
-    background-color: #118CFE;
+    background-color: rgb(226, 92, 43);
     color: white;
     box-shadow: 0 3px 7px rgba(14, 13, 13, 0.548);
     cursor: pointer;
@@ -107,4 +150,13 @@
     height: 500px;
     width: 30%;
     background-color: gainsboro;
+}
+
+/* ----------------------------------BACK BTN BOX */
+
+.backBtnBox {
+
+  position: absolute;
+  top: 15%;
+  cursor: pointer;
 }
