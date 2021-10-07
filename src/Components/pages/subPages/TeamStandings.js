@@ -5,15 +5,15 @@ import { useState, useEffect } from 'react';
 
 const TeamStandings = () => {
 
-    // const [ data, setData ] = useState([])
-    // const [ err, setErr ] = useState(null)
-    // const [ loading, setLoading ] = useState(true)
+    const [ data, setData ] = useState([])
+    const [ err, setErr ] = useState(null)
+    const [ loading, setLoading ] = useState(true)
 
     // useEffect(() => {
 
     //     const connect = async () => {
          
-    //      const response =  await fetch("https://api-football-v1.p.rapidapi.com/v3/standings?season=2020&league=39", {
+    //      const response =  await fetch("https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=39", {
     //                         "method": "GET",
     //                             "headers": {
     //                                 "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
@@ -23,13 +23,18 @@ const TeamStandings = () => {
 
     //             const result = await response.json();
 
-    //               setData([result])
+                  
+    //               setTimeout(() => {
 
+    //                    setData(result.response[0].league.standings[0])
+    //                 }, 5000)
                  
     //     }
     //     connect()
        
     // }, [])
+
+
 
     return (
 
@@ -37,14 +42,17 @@ const TeamStandings = () => {
             {/* <BackBtn backOne={backOne} /> */}
             <LeagueList />
             <div>
-                {/* {data ? data.map(item => (
- 
-                 console.log(item.league.standings[0])
-                    // <h1>{ item }</h1>
-                )) : loading } */}
+                  {/* {data ? data.map(item => (
+                     
+                     
+                            <h5 key={item.rank}>{item.name}</h5>
+                     
+                  )) : loading}                 */}
             </div>
         </div>
       );
 }
  
 export default TeamStandings;
+
+
