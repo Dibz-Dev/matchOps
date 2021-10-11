@@ -1,42 +1,49 @@
-
+import { useEffect, useState } from 'react';
 
 
 const useFetch = (url) => {
 
+    const [ fixtures, setFixtures ] = useState([])
+    const [ data, setData ] = useState([])
+    const [ err, setErr ] = useState(null)
+    const [ loading, setLoading ] = useState(true)
    
-   
+ useEffect(() => {
 
-    return { data, err, loading }
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         fetch(url, {
-    //             "method": "GET",
-    //                 "headers": {
-    //                     "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-    //                     "x-rapidapi-key": "1eb628ee98msh88d74b32f5a3c11p198c0bjsn7a831a3c9184"
-    //                 }
-    //         })
-    //         .then(res => {
-    //             if(!res.ok) {
-    //                 throw Error ('could not fetch data from this resource')
-    //             }
-    //             return res.json()
-    //         }).then(data => {
-    //             setData(data)
-    //             setErr(null)
-    //             setLoading(false)
-    //         }).catch(err => {
-    //             setErr(err.message)
-    //         })
-    //     }, 2000)
-    // }, [url])
+ setTimeout(() => {
+        const connect = async () => {
+         try { 
 
-    // return { data, err, loading }
+         
+            const response =  await fetch(url, {
+                            "method": "GET",
+                                "headers": {
+                                    "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+                                    "x-rapidapi-key": "3f22d1c517msh007b9f16b469511p1fffb2jsn7791a5c8df36"
+                                }
+                        })
+
+                const result = await response.json();
+
+              setData(result)
+                
+            }
+            catch(err) {
+              setErr() 
+
+            } finally {
+                setLoading(false)
+            }
+        }
+        connect()
+    })
+        
+       
+    }, [url])
+
+    return { data, err, loading } 
     
-    
-  
-
 }
 
 

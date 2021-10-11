@@ -7,7 +7,7 @@ const NavPanel = ({ Section, changeSub }) => {
                   <div className="navGroup">
                     <button onClick={changeSub} className="navItems liveScores">Live Scores</button>
                     <button onClick={changeSub} className="navItems teamStandings">Team Standings</button>
-                    <button onClick={changeSub} className="navItems calender">Calender</button>
+                    <button onClick={changeSub} className="navItems futures">Futures</button>
                   </div>
                </div>
            </nav>

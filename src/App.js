@@ -39,8 +39,8 @@ function App() {
   
   } else if (e.target.classList.contains('teamStandings')) {
     setSubSection('TeamStandings')
-  } else if (e.target.classList.contains('calender')) {
-    setSubSection('WeeklyCalender')
+  } else if (e.target.classList.contains('futures')) {
+    setSubSection('Futures')
   } else if (e.target.classList.contains('playerCompare')) {
     setSubSection('PlayerCompare')
   } else if (e.target.classList.contains('teamStats')) {
@@ -48,6 +48,7 @@ function App() {
   }
 
  }
+
 
   return (
     <Router>

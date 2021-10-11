@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@100&display=swap');
 
 :root {
 
@@ -159,4 +160,40 @@ li .link.active {
   position: absolute;
   top: 15%;
   cursor: pointer;
+}
+
+
+/* --------------------------------------TEAM STANDINGS */
+
+.teamStandingsCardWrapper {
+
+    position: absolute;
+    right:5%;
+    top: 50%;
+    width: 50%;
+
+  
+  
+    
+}
+.teamStandingsCard {
+
+    display: flex;
+    padding: 10px;
+    box-shadow: 0 3px 7px rgba(68, 67, 67, 0.548);
+    border-radius: 10px;
+    width: 70%;
+    justify-content: space-between;
+    height: 40px;
+    margin: 20px;
+    background-color: white;
+}
+
+.nameCard, .rankCard {
+
+    font-size: 1.1rem;
+    font-family: 'saira', sans-serif;
+    
+    
+    
 }

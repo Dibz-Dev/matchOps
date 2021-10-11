@@ -1,13 +1,13 @@
-const LeagueList = () => {
+const LeagueList = ({ changeLeague }) => {
 
     return ( 
 
         <div className="leagueListWrapper">
             <div className="leagueListGroup">
-                <button className="leagueListItem">Premier League</button>
-                <button className="leagueListItem">Championship</button>
-                <button className="leagueListItem">League One</button>
-                <button className="leagueListItem">League Two</button>
+                <button onClick={changeLeague} className="leagueListItem premier">Premier League</button>
+                <button onClick={changeLeague} className="leagueListItem championship">Championship</button>
+                <button onClick={changeLeague} className="leagueListItem leagueOne">League One</button>
+                <button onClick={changeLeague} className="leagueListItem leagueTwo">League Two</button>
             </div>
         </div>
 
