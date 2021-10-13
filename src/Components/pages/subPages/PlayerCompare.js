@@ -4,15 +4,13 @@ import PlayerPanel from "../../SubComponents/PlayerPanel";
 import CompareTemplate from "../../SubComponents/CompareTemplate";
 import useFetch from "../../../useFetch";
 
-const PlayerCompare = ({ league, changeLeague }) => {
+const PlayerCompare = () => {
 
     const [ team, setTeam] = useState();
     const [ position, setPosition ] = useState();
-    const { data, err, loading } = useFetch(`https://api-football-v1.p.rapidapi.com/v3/players?season=2021&league=39&team=${league}`)
+    const { data, err, loading } = useFetch(`https://api-football-v1.p.rapidapi.com/v3/players?season=2021&team=33`)
 
-{loading ? console.log('loading') : console.log(data.response)}
-
-
+                    {loading ? console.log('loading') : console.log(data)}
 
     return (
 

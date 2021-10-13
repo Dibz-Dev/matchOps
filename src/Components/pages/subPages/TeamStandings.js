@@ -27,6 +27,7 @@ const TeamStandings = () => {
     <div>
         
         <LeagueList changeLeague={changeLeague}/>
+        
         <div className="teamStandingsCardWrapper">
             
                  {loading ? <LoadingPage /> : data.response[0].league.standings[0].map(item => (
