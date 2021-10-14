@@ -2,19 +2,20 @@ import NavPanel from "../SubComponents/NavPanel";
 import Header from "../SubComponents/Header";
 import PlayerCompare from "../pages/subPages/PlayerCompare";
 import TeamStats from "../pages/subPages/TeamStats";
+import { useSelector } from 'react-redux';
 
 
+const FantasyHub = ({ changeSub }) => {
 
-const FantasyHub = ({ Section, subSection, changeSub }) => {
+    const SubSection = useSelector(state => state.SubSection)
 
-   
     return ( 
 
         <div>
             <Header />
-            {subSection === null ? <NavPanel subSection={subSection} changeSub={changeSub} Section={Section} /> : null}
-            {subSection === 'PlayerCompare' && <PlayerCompare  />}
-            {subSection === 'TeamStats' && <TeamStats />}
+            {SubSection === null ? <NavPanel  changeSub={changeSub} /> : null}
+            {SubSection === 'PlayerCompare' && <PlayerCompare  />}
+            {SubSection === 'TeamStats' && <TeamStats />}
         </div>
      );
 }

@@ -1,4 +1,8 @@
-const NavPanel = ({ Section, changeSub }) => {
+import { useSelector } from 'react-redux';
+
+const NavPanel = ({ changeSub }) => {
+
+  const Section = useSelector(state => state.Section)
 
       if (Section === 'MatchHub') {return (
         <div className="navPanelWrapper">

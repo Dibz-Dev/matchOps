@@ -1,5 +1,8 @@
-const Header = ({ Section }) => {
+import { useSelector } from "react-redux";
 
+const Header = () => {
+
+    const Section = useSelector(state => state.Section)
 
     return ( 
 

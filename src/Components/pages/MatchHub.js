@@ -4,18 +4,20 @@ import LiveScores from "./subPages/LiveScores";
 import TeamStandings from "./subPages/TeamStandings";
 import Futures from "./subPages/Futures";
 
+import { useSelector } from 'react-redux';
 
-const MatchHub = ({ Section, changeSub, subSection, backOne}) => {
+const MatchHub = ({ changeSub }) => {
 
+const SubSection = useSelector(state => state.SubSection)
 
     return ( 
 
         <div>
             <Header />
-            {subSection === null ? <NavPanel changeSub={changeSub} subSection={subSection} Section={Section}/> : null}
-            {subSection === 'LiveScores' && <LiveScores Section={Section} subSection={subSection} backOne={backOne}/>}
-            {subSection === 'TeamStandings' && <TeamStandings Section={Section} subSection={subSection} backOne={backOne}/>}
-            {subSection === 'Futures' && <Futures Section={Section} subSection={subSection} backOne={backOne}/>}
+            {SubSection === null ? <NavPanel changeSub={changeSub} /> : null}
+            {SubSection === 'LiveScores' && <LiveScores />}
+            {SubSection === 'TeamStandings' && <TeamStandings />}
+            {SubSection === 'Futures' && <Futures />}
         </div>
         
      );

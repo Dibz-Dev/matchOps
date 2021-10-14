@@ -3,21 +3,21 @@ import LoadingPage from '../../LoadingPage';
 
 const Futures = () => {
 
-    const { data, err, loading} = useFetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all')
+    const { data, err, loading} = useFetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2021&round=Regular%20Season%20-%208')
 
     const dateArray = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',' Friday', 'Saturday'];
-
+console.log(data)
     return (
 
      
             <div className="liveScoresCard">
           
-          {loading ? <LoadingPage /> : data.response.map(item => (
+          {/* {loading ? <LoadingPage /> : data.response.map(item => (
 
 
                         <div className="fixturesCard">
                             
-                            {/* <span key={item.date}> {dateArray[(new Date(item.fixture.date).getDay())]} </span> */}
+                            <span key={item.date}> {dateArray[(new Date(item.fixture.date).getDay())]} </span>
                             <div className="fixtureGrid">
                                 
                                     <img className="logoSize" src={item.teams.home.logo} alt="" />
@@ -27,7 +27,7 @@ const Futures = () => {
                                 </div>
                             </div>
                             
-                         )) }         
+                         )) }          */}
                           
            </div>
    

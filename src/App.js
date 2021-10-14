@@ -2,49 +2,55 @@ import Header from "./Components/SubComponents/Header";
 import { useState } from "react";
 import MatchHub from "./Components/pages/MatchHub";
 import FantasyHub from "./Components/pages/FantasyHub";
-import HomePanel from "./Components/SubComponents/Homepanel";
+import HomeNavPanel from "./Components/SubComponents/Homepanel";
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from "./Components/SubComponents/NavBar";
+import { matchSection, fantasySection, liveScore, teamStandings, futures, playerCompare, teamStats, resetSubSection } from './actions';
+
+import {  noHomePanel } from "./actions";
+import { useSelector, useDispatch } from 'react-redux';
 
 
 // import LoadingPage from './Components/LoadingPage';
 
-
 function App() {
 
-  const [ Section, setSection ] = useState('')
-  const [ subSection, setSubSection] = useState(null)
-  const [ homePanel, setHomePanel ] = useState(true)
+  const HomePanel = useSelector(state => state.HomePanel)
+  const Section = useSelector(state => state.Section)
+  const SubSection = useSelector(state => state.SubSection)
+  const dispatch = useDispatch()
+  
 
   const changeSection = (e) => {
  
     if(e.target.classList.contains('matchHub')) {
 
-          setSection('MatchHub')
-          setHomePanel(false)
-          setSubSection(null)
+          dispatch(matchSection())
+          dispatch(noHomePanel())
+          dispatch(resetSubSection())
          
 
     } else if (e.target.classList.contains('fantasyHub')) {
-          setSection('FantasyHub')
-          setHomePanel(false)
-          setSubSection(null)
+
+          dispatch(fantasySection())
+          dispatch(noHomePanel())
+          dispatch(resetSubSection())
     }
  }
 
  const changeSub = (e) => {
 
   if(e.target.classList.contains('liveScores')) {
-    setSubSection('LiveScores')
+    dispatch(liveScore())
   
   } else if (e.target.classList.contains('teamStandings')) {
-    setSubSection('TeamStandings')
+    dispatch(teamStandings())
   } else if (e.target.classList.contains('futures')) {
-    setSubSection('Futures')
+    dispatch(futures())
   } else if (e.target.classList.contains('playerCompare')) {
-    setSubSection('PlayerCompare')
+    dispatch(playerCompare())
   } else if (e.target.classList.contains('teamStats')) {
-    setSubSection('TeamStats')
+    dispatch(teamStats())
   }
 
  }
@@ -54,17 +60,16 @@ function App() {
     <Router>
     <div className="App">
 
-          <NavBar changeSection={changeSection} Section={Section} homePanel={homePanel} />
-          <Header Section={Section} />
+         <NavBar changeSection={changeSection} />
          
-          {homePanel && <HomePanel Section={Section} changeSection={changeSection} />}
+          {HomePanel && <HomeNavPanel changeSection={changeSection} />}
 
             <Switch>
                 <Route exact path='/matchhub'>
-                      <MatchHub changeSection={changeSection} changeSub={changeSub} subSection={subSection} Section={Section}/>
+                      <MatchHub changeSection={changeSection} changeSub={changeSub} />
                 </Route>
                 <Route exact path='/fantasyhub'>
-                      <FantasyHub changeSection={changeSection} changeSub={changeSub} Section={Section} subSection={subSection}/>
+                      <FantasyHub changeSection={changeSection} changeSub={changeSub} />
                 </Route>
                 
             </Switch>

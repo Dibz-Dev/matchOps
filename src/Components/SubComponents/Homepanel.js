@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const HomePanel = ({ Section, changeSection }) => {
+const HomeNavPanel = ({ changeSection }) => {
 
     return (
 
@@ -15,4 +15,4 @@ const HomePanel = ({ Section, changeSection }) => {
       );
 }
  
-export default HomePanel;
+export default HomeNavPanel;
