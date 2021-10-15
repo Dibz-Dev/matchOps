@@ -14,7 +14,7 @@ const LiveScores = ({ Section, subSection }) => {
     return (
     
     <div>
-        <LeagueList />
+       
 
         <div className="liveScoresCard">
           

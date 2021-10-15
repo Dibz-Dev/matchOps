@@ -5,7 +5,7 @@ import FantasyHub from "./Components/pages/FantasyHub";
 import HomeNavPanel from "./Components/SubComponents/Homepanel";
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from "./Components/SubComponents/NavBar";
-import { matchSection, fantasySection, liveScore, teamStandings, futures, playerCompare, teamStats, resetSubSection } from './actions';
+import { matchSection, fantasySection, liveScore, teamStandings, fixtures, playerCompare, teamStats, resetSubSection } from './actions';
 
 import {  noHomePanel } from "./actions";
 import { useSelector, useDispatch } from 'react-redux';
@@ -45,8 +45,8 @@ function App() {
   
   } else if (e.target.classList.contains('teamStandings')) {
     dispatch(teamStandings())
-  } else if (e.target.classList.contains('futures')) {
-    dispatch(futures())
+  } else if (e.target.classList.contains('fixtures')) {
+    dispatch(fixtures())
   } else if (e.target.classList.contains('playerCompare')) {
     dispatch(playerCompare())
   } else if (e.target.classList.contains('teamStats')) {

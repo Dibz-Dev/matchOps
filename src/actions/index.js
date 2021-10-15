@@ -77,10 +77,10 @@ export const teamStandings = () => {
     }
 }
 
-export const futures = () => {
+export const fixtures = () => {
 
     return {
-        type: 'Futures'
+        type: 'Fixtures'
     }
 }
 
@@ -112,5 +112,20 @@ export const noHomePanel = () => {
 
     return {
         type: 'NoHomePanel'
+    }
+}
+
+//--------------------------------Counter-------------------------------
+
+export const increment = () => {
+    return {
+        type: 'INCREMENT'
+    }
+}
+
+export const decrement = () => {
+
+    return {
+        type: "DECREMENT"
     }
 }

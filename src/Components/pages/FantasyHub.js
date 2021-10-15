@@ -12,7 +12,7 @@ const FantasyHub = ({ changeSub }) => {
     return ( 
 
         <div>
-            <Header />
+            {/* <Header /> */}
             {SubSection === null ? <NavPanel  changeSub={changeSub} /> : null}
             {SubSection === 'PlayerCompare' && <PlayerCompare  />}
             {SubSection === 'TeamStats' && <TeamStats />}

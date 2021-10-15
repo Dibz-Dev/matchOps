@@ -9,9 +9,8 @@ const NavPanel = ({ changeSub }) => {
            <nav>
                <div className="navGrid">
                   <div className="navGroup">
-                    <button onClick={changeSub} className="navItems liveScores">Live Scores</button>
                     <button onClick={changeSub} className="navItems teamStandings">Team Standings</button>
-                    <button onClick={changeSub} className="navItems futures">Futures</button>
+                    <button onClick={changeSub} className="navItems fixtures">Fixtures</button>
                   </div>
                </div>
            </nav>

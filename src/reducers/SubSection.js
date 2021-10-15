@@ -4,8 +4,8 @@ const SubSectionReducer = (state = null, action) => {
            return state = 'LiveScores'
         case 'TeamStandings':
             return state = 'TeamStandings'
-        case 'Futures':
-           return state = 'Futures'
+        case 'Fixtures':
+           return state = 'Fixtures'
         case 'TeamStats':
             return state = 'TeamStats'
         case 'PlayerCompare':
