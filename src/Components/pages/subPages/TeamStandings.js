@@ -20,14 +20,17 @@ const TeamStandings = () => {
         <LeagueList />
         
         <div className="teamStandingsCardWrapper">
-            
+            <div className="tableTitles">
+                <h4>Points</h4><h4>Goals</h4><h4>Form</h4>
+            </div>
             
                  {loading ? <LoadingPage /> : data.response[0].league.standings[0].map(item => (
                      <div style={{ display: 'flex'}}>
                          <h3 className='rankCard' key={item.rank}> {item.rank} </h3>
                            <div className="teamStandingsCard">
-                           <img className="logoSize" key={item.logo} src={item.team.logo} alt="" />
-                                <div className="standingsStat">
+                          
+                                <div className="standingsStat" style={{ display: 'flex', justifyContent: 'start'}}>
+                                <img className="logoSize" key={item.logo} src={item.team.logo} alt="" />
                                     <span className='nameCard' key={item.name}>{item.team.name}</span>
                                 </div>
                                 <div className="standingsStat">

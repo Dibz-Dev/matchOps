@@ -32,8 +32,9 @@ li .link.active {
 
 .logoSize {
 
-    width:30px;
-    height:30px;
+    width:20px;
+    height:20px;
+    
 }
 
 /* ----------------------------------------------SECTION HEADER */
@@ -179,33 +180,43 @@ li .link.active {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    width: 90%;
+    width: 100%;
     margin-left: 50px;
-    box-shadow: 0 3px 7px rgba(68, 67, 67, 0.548);
+    /* box-shadow: 0 3px 7px rgba(68, 67, 67, 0.548); */
     padding: 20px;
 
 }
 .teamStandingsCard {
 
     display: flex;
-    padding: 15px;
-    /* box-shadow: 0 3px 7px rgba(68, 67, 67, 0.548); */
-    border-radius: 10px;
     width: 80%;
-    justify-content: space-between;
-    height: 20px;
-    margin: 5px;
-    background-color: white;
+    justify-content: space-around;
+    background-color: white; 
     /* border: 2px solid blue; */
 }
 
 
-.nameCard, .rankCard {
+.rankCard {
 
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-family: 'Electrolize', sans-serif;
+    color: #118cfe;
+
+}
+
+.nameCard {
+
+    font-size: 1rem;
     font-family: 'saira', sans-serif;
-    
-    
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+span {
+
+    font-size: 1rem;
+    font-family: 'saira', sans-serif;
+    font-weight: bold;
     
 }
 
@@ -213,8 +224,25 @@ li .link.active {
 
     text-align: center;
     width:100%;
+    background-color: white;
+    box-shadow: 0 3px 7px rgba(68, 67, 67, 0.548);
+    padding: 15px;
+    margin: 10px;
     /* border: 2px solid red; */
 }
+
+.tableTitles {
+
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto -20px auto;
+    width: 60%;
+    font-family: 'Electrolize', sans-serif;
+    color: #118cfe;
+    
+}
+
+
 
 
 /* ---------------------------LIVESCORES */
@@ -234,7 +262,6 @@ li .link.active {
 
     display: flex;
     padding: 10px;
-    box-shadow: 0 3px 7px rgba(68, 67, 67, 0.548);
     border-radius: 10px;
     width: 300px;
     justify-content: center;

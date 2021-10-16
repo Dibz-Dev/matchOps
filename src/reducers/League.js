@@ -7,7 +7,7 @@ const LeagueReducer = (state = 39, action) => {
         case 'LEAGUEONE':
             return state = 41
         case 'LEAGUETWO':
-            return state = 41
+            return state = 42
         default:
             return state;
 
