@@ -32,13 +32,13 @@ const Fixtures = () => {
 
                         <div className="fixturesCard">
                             
-                            <span key={item.date}> {dateArray[(new Date(item.fixture.date).getDay())]} </span>
+                            {/* <span key={item.date}> {dateArray[(new Date(item.fixture.date).getDay())]} </span> */}
                             <div className="fixtureGrid">
                                 
                                     <img className="logoSize" src={item.teams.home.logo} alt="" />
-                                    <h2 className='fixtureInfo' key={item.nameHome}>  {item.teams.home.name}</h2> 
+                                    <h2 className='fixtureInfo' key={item.nameHome}> {item.teams.home.name} <span className="">{item.fixture.status.short === 'FT' && item.score.fulltime.home} </span></h2> 
                                     <img className="logoSize" src={item.teams.away.logo} alt="" />
-                                    <h2 key={item.nameAway} className='fixtureInfo'>{item.teams.away.name} </h2>   
+                                    <h2 key={item.nameAway} className='fixtureInfo'>{item.teams.away.name} <span>{item.fixture.status.short === 'FT' && item.score.fulltime.away}</span> </h2>   
                                 </div>
                             </div>
                             
